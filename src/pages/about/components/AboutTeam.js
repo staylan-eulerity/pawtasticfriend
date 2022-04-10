@@ -25,9 +25,9 @@ const teamMembers = [
 function AboutTeam () {
     return (
         <StyledTeamContainer>
-            { teamMembers.map((member) => {
+            { teamMembers.map((member, index) => {
                 return (
-                <TeamCard>
+                <TeamCard key={index}>
                     <div className='img__cont'>
                         <img src={member.image} alt={member.name}/>
                     </div>

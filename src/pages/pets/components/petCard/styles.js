@@ -45,9 +45,21 @@ export const StyledCard = styled.div`
             border: 1px solid #999999
         }
 
+        .card__sub {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 4px;
+        }
+
+
         .pet__date {
-            margin-top: 5px;
             font-size: 0.6rem;
+        }
+
+        .pet__select {
+            height: 18px;
+            width: 18px;
         }
     }
 `

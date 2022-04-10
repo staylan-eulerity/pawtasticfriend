@@ -9,6 +9,7 @@ export const AboutContent = styled.div`
     width: 1000px;
     padding: 8px;
     margin-top: 20px;
+    margin-bottom: 20px;
     background-color: rgba(0,0,0, 0.45);
     border-radius: 4px;
     color: white;

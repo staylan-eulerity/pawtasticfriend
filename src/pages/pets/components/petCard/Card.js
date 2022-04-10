@@ -11,7 +11,10 @@ const Card = ({name, image, description, created}) => {
                 <h4 className='pet__name'>{name}</h4>
                 <p className='pet__description'>{description}</p>
                 <hr className='card__break'/>
-                <small className='pet__date'>{created}</small>
+                <div className='card__sub'>
+                    <small className='pet__date'>{created}</small>
+                    <input className='pet__select' type='checkbox' />
+                </div>
             </div>
         </StyledCard>
     )
