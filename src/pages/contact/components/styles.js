@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Button } from '../../../components/buttons/buttonStyles';
 
 export const StyledContactForm = styled.form`
     display: flex;
@@ -30,7 +29,11 @@ export const StyledContactForm = styled.form`
     }
 `
 
-export const ContactButton = styled(Button)`
+export const SubmitButton = styled.input`
+    width: 150px;
+    height: 50px;
+    border-radius: 4px;
+    padding: 5px;
     align-self: center;
     font-size: 1.3rem;
     font-weight: 600;

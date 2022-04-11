@@ -9,7 +9,7 @@ function About() {
       <AboutHeader><FaPaw /> About Us <FaPaw /></AboutHeader>
       <AboutMainContent>
         <p>
-          For nearly 7 years Pawfect Friend has been pairing our clients with the perfect furry friend. Whether our pets have fur, scales, or feathers we strive to find them the perfect forecver home!
+          For nearly 7 years Pawfect Friend has been pairing our clients with the perfect furry friend. Whether our pets have fur, scales, or feathers we strive to find them the perfect forever home!
         </p>
         <br />
         <p>
