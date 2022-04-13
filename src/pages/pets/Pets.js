@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchPets, selectAllPets, deSelectAllPets } from '../../actions/petListActions';
 import CardGrid from './components/cardGrid/CardGrid';
@@ -24,15 +25,22 @@ function Pets() {
 
   const downloadSelectedPets = () => {
     let imageArray = selectedPetList.filter((pet) => pet.isSelected).map((pet) => pet.url)
-    imageArray.forEach((image) => {
-      let link = document.createElement('a')
-      link.href = image.url;
-      link.download = image.desciption;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    })
-    console.log(imageArray)
+    for (let i = 0; i < imageArray.length; i++) {
+      // axios({
+      //   url: `${imageArray[i]}`,
+      //   method: 'GET',
+      //   responseType: 'blob'
+      // }).then((response) => {
+      //   const url = window.URL.createObjectURL(new Blob([response.data]));
+      //   const link = document.createElement('a');
+      //   link.href = url;
+      //   link.setAttribute('download', `image${i}.jpg`);
+      //   document.body.appendChild(link);
+      //   link.click();
+      //   document.body.removeChild(link)
+      // })
+    }
+    console.log('selected pet image URLs', imageArray)
   }
 
   return (
