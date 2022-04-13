@@ -23,23 +23,26 @@ function Pets() {
     dispatch(deSelectAllPets(selectedPetList))
   }
 
-  const downloadSelectedPets = () => {
-    let imageArray = selectedPetList.filter((pet) => pet.isSelected).map((pet) => pet.url)
+  const downloadSelectedPets = async () => {
+    let imageArray = selectedPetList.filter((pet) => pet.isSelected).map((pet) => pet.url);
     for (let i = 0; i < imageArray.length; i++) {
-      // axios({
-      //   url: `${imageArray[i]}`,
-      //   method: 'GET',
-      //   responseType: 'blob'
-      // }).then((response) => {
-      //   const url = window.URL.createObjectURL(new Blob([response.data]));
-      //   const link = document.createElement('a');
-      //   link.href = url;
-      //   link.setAttribute('download', `image${i}.jpg`);
-      //   document.body.appendChild(link);
-      //   link.click();
-      //   document.body.removeChild(link)
-      // })
-    }
+      try {
+        const response = await axios({
+          url: imageArray[i],
+          method: 'GET',
+          responseType: 'blob'
+        })
+          const url = window.URL.createObjectURL(new Blob([response.data]));
+          const link = document.createElement('a');
+          link.href = url;
+          link.setAttribute('download', `image${[i]}.jpg`);
+          document.body.appendChild(link);
+          await link.click();
+          document.body.removeChild(link)
+      } catch (error) {
+        console.log(error)
+      }
+  }
     console.log('selected pet image URLs', imageArray)
   }
 
