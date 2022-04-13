@@ -7,6 +7,7 @@ export const StyledLoadingSpinner = styled.div`
   width: 120px;
   height: 120px;
   animation: spin 2s linear infinite;
+  margin-top: 30px;
 
 @keyframes spin {
   0% { transform: rotate(0deg); }

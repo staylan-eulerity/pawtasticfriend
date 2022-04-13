@@ -5,4 +5,3 @@ export const FETCH_PETS_ERROR = 'FETCH_PETS_ERROR';
 export const SELECT_ALL_PETS = 'SELECT_ALL_PETS';
 export const DESELECT_ALL_PETS = 'DESELECT_ALL_PETS';
 export const SELECT_PET = 'SELECT_PET';
-export const DESELECT_PET = 'DESELECT_PET';

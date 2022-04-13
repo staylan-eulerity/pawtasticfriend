@@ -6,6 +6,11 @@ export const PetsContent = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    .error__header {
+        margin-top: 20px;
+        color: white;
+    }
 `
 
 export const PetsHeader = styled.h1`

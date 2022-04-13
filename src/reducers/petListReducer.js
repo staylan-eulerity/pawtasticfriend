@@ -1,13 +1,11 @@
-import {
-    FETCH_PETS_ERROR,
-    FETCH_PETS_REQUEST, FETCH_PETS_SUCCESS,
-} from '../actions/types'
+import { FETCH_PETS_REQUEST, FETCH_PETS_SUCCESS, FETCH_PETS_ERROR, SELECT_ALL_PETS, DESELECT_ALL_PETS, SELECT_PET } from '../actions/types'
 
 
 const initialState = {
     petList: [],
+    selectedPetList: [],
     isLoading: true,
-    error: false
+    error: ''
 }
 
 const petListReducer = (state = initialState, action) => {
@@ -21,15 +19,32 @@ const petListReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                error: false,
-                petList: action.payload
+                error: '',
+                petList: action.payload,
+                selectedPetList: action.payload.map((pet) => ({url: pet.url, isSelected: false}))
             }
         case FETCH_PETS_ERROR:
             return {
                 ...state,
                 isLoading: false,
                 petList: [],
-                error: true
+                selectedPetList: [],
+                error: action.payload
+            }
+        case SELECT_ALL_PETS:
+            return {
+                ...state,
+                selectedPetList: action.payload
+            }
+        case DESELECT_ALL_PETS:
+            return {
+                ...state,
+                selectedPetList: action.payload
+            }
+        case SELECT_PET:
+            return {
+                ...state,
+                selectedPetList: action.payload
             }
         default: return state
     }
